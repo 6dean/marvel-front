@@ -1,38 +1,310 @@
-.App {
-  text-align: center;
+a:link {
+  text-decoration: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a:visited {
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p {
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body,
+header {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+body {
+  background-color: rgb(241, 241, 241);
+}
+
+.top-header {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(31, 31, 31);
+}
+
+.top-buttons {
+  border-top: 1px rgb(54, 54, 54) solid;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background-color: rgb(31, 31, 31);
+  padding: 10px;
+}
+
+button {
+  border: none;
+  background: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  font-weight: bold;
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 80%;
+}
+
+.search-bar {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  width: 300px;
+}
+
+.listing-comics {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.card {
+  width: 220px;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
+}
+
+.card:hover {
+  cursor: pointer;
+  color: red;
+}
+
+.comics-img:hover {
+  padding-bottom: 12px;
+  opacity: 90%;
+  cursor: pointer;
+  transition: 0.25s padding ease-out;
+  box-shadow: none;
+  color: red;
+}
+
+.title-card {
+  min-width: 195px;
+  margin-top: 10px;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.description {
+  display: none;
+}
+
+.img-fit img {
+  height: 300px;
+  width: 200px;
+  display: flex;
+  object-fit: cover;
+  object-position: left;
+  box-shadow: 1px 3px 5px 2px rgba(0, 0, 0, 0.29);
+}
+
+.title-comics {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.listing-characters {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.card-character {
+  background-color: rgb(40, 39, 39);
+  border-end-end-radius: 50px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  width: 165px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-character:hover {
+  box-shadow: 1px 3px 5px 2px rgba(0, 0, 0, 0.688);
+  transition: ease-in-out 0.2s;
+  opacity: 90%;
+}
+
+.img-fit-C {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-radius: 2px;
 }
 
-.App-link {
-  color: #61dafb;
+.img-fit-C img {
+  margin-top: 4px;
+  height: 158px;
+  width: 158px;
+  display: flex;
+  object-fit: cover;
+  object-position: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.separator {
+  border-top: 2px solid red;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 158px;
+}
+
+.title-card-charac {
+  min-width: 165px;
+  margin-top: 6px;
+  height: 55px;
+  text-align: center;
+}
+
+.title-character {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+}
+
+.listing-characters:hover {
+  color: rgb(255, 179, 0);
+}
+
+.master-character-page {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fav-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button {
+  color: red;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.character-style-info {
+  display: flex;
+  margin-top: 40px;
+  justify-content: space-between;
+}
+
+.portrait img {
+  height: 380px;
+  width: 300px;
+  background-color: aquamarine;
+  display: flex;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.character-id {
+  display: flex;
+}
+
+.block-info {
+  display: flex;
+  border: 2px solid green;
+}
+
+.box-1 {
+  margin-top: 30px;
+  background-color: blue;
+  width: 200px;
+  height: 200px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  color: rgb(56, 56, 56);
+}
+
+.text-style {
+  margin-bottom: 50px;
+}
+.box-2 {
+  margin-top: 30px;
+  margin-left: 40px;
+  background-color: rgb(255, 0, 0);
+  height: 200px;
+  width: 600px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 30px;
+}
+
+.header-scroll-text {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.master-scrolling {
+  display: flex;
+  justify-content: center;
+}
+
+.scrolling-comics {
+  padding: 10px;
+  display: flex;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.181);
+  flex-wrap: nowrap;
+  overflow: hidden;
+  list-style: none;
+  margin: 0;
+  gap: 30px;
+  width: 1100px;
+  height: 250px;
+  border: 1px solid rgba(255, 0, 0, 0.223);
+  border-radius: 10px;
+  overflow-x: scroll;
+  margin-bottom: 55px;
+}
+
+.comics-fit-scroll img {
+  height: 210px;
+  width: 150px;
+  background-color: aquamarine;
+  display: flex;
+  object-fit: cover;
+}
+
+.title-comics-scroll {
+  margin-top: 5px;
+  font-size: 11px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+footer {
+  margin-top: 100px;
+  height: 200px;
+  background-color: black;
 }

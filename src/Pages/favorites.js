@@ -8,46 +8,29 @@ const Favorite = ({ array }) => {
   // let favArray = JSON.parse(array);
 
   useEffect(() => {
-    const characters = [];
-    for (let i = 0; i < JSON.parse(array).length; i++) {
-      const element = JSON.parse(array)[i];
-      // requête
-      const response = await;
-      characters.push(response.data);
-    }
-    setData(characters);
-    /* const favArray = JSON.parse(array).map((elem, index) => {
+    const favArray = JSON.parse(array).map((elem, index) => {
       const fetchData = async () => {
         const response = await axios.get(
           `http://localhost:3000/comics/${elem}`
         );
-        // setData(response.data);
+        setData(response.data);
         console.log({ index, isLoading });
         console.log(index, response.data);
         return response.data;
       };
-      fetchData(_id);
+      fetchData();
     });
-    setData(favArray); */
+    setData(favArray);
     setIsLoading(false);
-  }, []);
+    console.log(data);
+  }, [array]);
 
-  return isLoading || !data.length ? (
+  return isLoading ? (
     <div className="loading">
       <p className="loading-text">LOADING ...</p>
     </div>
   ) : (
-    <div>
-      {/* {data.map((elem, index) => {
-        if (elem) {
-          console.log({ index, elem });
-          console.log(Object.keys(elem));
-          return <div key={index}>{elem._id}</div>;
-        }
-        return null;
-      })} */}
-      {`${JSON.stringify(data)} ${data.length}`}
-    </div>
+    <div>{`${JSON.stringify(data)} ${data.length}`}</div>
   );
 };
 

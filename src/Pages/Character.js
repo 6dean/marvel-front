@@ -25,11 +25,24 @@ const Character = ({ SaveDataToLocalStorage }) => {
   }, [id]);
 
   return isLoading ? (
-    <div className="loading">
-      <p className="loading-text">LOADING ...</p>
-    </div>
+    <body>
+      <div className="bodY">
+        <div class="loading-effect">
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+        </div>
+      </div>
+    </body>
   ) : (
-    <>
+    <body>
       <div className="master-character-page">
         <div className="fav-button">
           <button
@@ -96,7 +109,7 @@ const Character = ({ SaveDataToLocalStorage }) => {
           </div>
         </div>
       </div>
-    </>
+    </body>
   );
 };
 

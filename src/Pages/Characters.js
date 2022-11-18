@@ -23,13 +23,24 @@ const Characters = () => {
   }, [name, skip]);
 
   return isLoading ? (
-    <div className="loading">
-      <>
-        <p className="loading-text">LOADING ... </p>
-      </>
-    </div>
+    <body>
+      <div className="bodY">
+        <div class="loading-effect">
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+        </div>
+      </div>
+    </body>
   ) : (
-    <>
+    <body>
       <div className="search-bar">
         <input
           onChange={(elem) => {
@@ -122,7 +133,7 @@ const Characters = () => {
           </button>
         </a>
       </div>
-    </>
+    </body>
   );
 };
 

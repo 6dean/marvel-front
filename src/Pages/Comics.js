@@ -20,13 +20,24 @@ const Comics = ({ SaveDataToLocalStorage }) => {
   }, [title, skip]);
 
   return isLoading ? (
-    <div className="loading">
-      <>
-        <p className="loading-text">LOADING ... </p>
-      </>
-    </div>
+    <body>
+      <div className="bodY">
+        <div class="loading-effect">
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+        </div>
+      </div>
+    </body>
   ) : (
-    <>
+    <body>
       <div className="search-bar">
         <input
           onChange={(elem) => {
@@ -108,7 +119,7 @@ const Comics = ({ SaveDataToLocalStorage }) => {
           PAGE SUIVANTE
         </button>
       </div>
-    </>
+    </body>
   );
 };
 

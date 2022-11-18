@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=BenchNine:wght@300&display=swap");
+
 a:link {
   text-decoration: none;
 }
@@ -20,10 +24,12 @@ header {
 
 body {
   background-color: rgb(241, 241, 241);
+  min-height: 100vh;
 }
 
 .top-header {
-  padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 6px;
   display: flex;
   justify-content: center;
   background-color: rgb(31, 31, 31);
@@ -41,7 +47,7 @@ body {
 button {
   border: none;
   background: none;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Barlow", sans-serif;
   color: white;
   font-weight: bold;
 }
@@ -180,8 +186,8 @@ input {
 }
 
 .title-character {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 15px;
+  font-family: "BenchNine", sans-serif;
+  font-size: 20px;
   color: rgb(255, 255, 255);
 }
 
@@ -303,8 +309,159 @@ input {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
+.fav-card {
+  margin-top: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top-right-radius: 50px;
+  box-shadow: 1px 1px 10px 4px rgb(125, 125, 125);
+  background-color: #1f1f1f;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 50px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.info-fav {
+  font-size: 30px;
+  word-spacing: 1px;
+  letter-spacing: 1px;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  color: white;
+}
+
+.apparition {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 13px;
+  color: crimson;
+}
+
+.portrait-fav img {
+  height: 220px;
+  width: 220px;
+  border-radius: 50px;
+  border: 4px solid transparent;
+  background: linear-gradient(45deg, red, rgba(243, 243, 242, 0.106)) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  display: flex;
+  object-fit: cover;
+  object-position: center;
+}
+
+.master-scrolling-fav {
+  display: flex;
+  justify-content: center;
+}
+
+.scrolling-comics-fav {
+  padding: 10px;
+  display: flex;
+  box-shadow: 1px 1px 10px 1px rgba(92, 82, 82, 0.181);
+  background-color: rgba(212, 212, 212, 0.234);
+  flex-wrap: nowrap;
+  overflow: hidden;
+  list-style: none;
+  margin: 0;
+  gap: 30px;
+  width: 600px;
+  height: 110px;
+  border-radius: 10px;
+  overflow-x: scroll;
+}
+
+.scrolling-comics-fav::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.comics-fit-scroll-fav img {
+  box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.301);
+  height: 110px;
+  width: 70px;
+  display: flex;
+  object-fit: contain;
+}
+
+.comics-fit-scroll-fav img:hover {
+  cursor: pointer;
+}
+
+.no-fav {
+  color: blue;
+  font-size: 20px;
+}
+
 footer {
+  width: 100vw;
   margin-top: 100px;
   height: 200px;
-  background-color: black;
+  background-color: rgb(31, 31, 31);
+}
+
+.bodY {
+  display: flex;
+  justify-content: center;
+  padding: 200px;
+}
+
+.loading-effect {
+  height: 100vh;
+  display: flex;
+  background: #f1f1f1;
+}
+.wave {
+  width: 5px;
+  height: 100px;
+  background: linear-gradient(45deg, rgb(255, 0, 0), #fff);
+  margin: 10px;
+  animation: wave 1s linear infinite;
+  border-radius: 20px;
+}
+.wave:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.wave:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.wave:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.wave:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.wave:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.wave:nth-child(7) {
+  animation-delay: 0.6s;
+}
+.wave:nth-child(8) {
+  animation-delay: 0.7s;
+}
+.wave:nth-child(9) {
+  animation-delay: 0.8s;
+}
+.wave:nth-child(10) {
+  animation-delay: 0.9s;
+}
+
+@keyframes wave {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
 }

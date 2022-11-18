@@ -38,31 +38,26 @@ const Characters = () => {
         ></input>
       </div>
 
-      <div>
+      <div className="page-select">
         {skip === 0 ? null : (
-          // eslint-disable-next-line jsx-a11y/anchor-is-valid
-          <a href="#">
-            <button
-              onClick={() => {
-                setSkip(skip - 100);
-                window.onbeforeunload = function () {
-                  window.scrollTo(0, 0);
-                };
-              }}
-            >
-              PAGE PRECEDENTE
-            </button>
-          </a>
-        )}
-        <a href="#">
           <button
             onClick={() => {
-              setSkip(skip + 100);
+              setSkip(skip - 100);
+              window.onbeforeunload = function () {
+                window.scrollTo(0, 0);
+              };
             }}
           >
-            PAGE SUIVANTE
+            PAGE PRECEDENTE
           </button>
-        </a>
+        )}
+        <button
+          onClick={() => {
+            setSkip(skip + 100);
+          }}
+        >
+          PAGE SUIVANTE
+        </button>
       </div>
       <div className="listing-characters">
         {data.results.map((elem, index) => {

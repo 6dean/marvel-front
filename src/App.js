@@ -15,12 +15,13 @@ import Footer from "./components/Footer";
 function App() {
   function SaveDataToLocalStorage(data) {
     let favFromUser = [];
-    favFromUser = JSON.parse(localStorage.getItem("session")) || [];
+    favFromUser = JSON.parse(localStorage.getItem("favorites")) || [];
     if (favFromUser.some((id) => (id === data) === true)) {
-      localStorage.removeItem("session", JSON.stringify(favFromUser));
+      return null;
     } else {
       favFromUser.push(data);
-      localStorage.setItem("session", JSON.stringify(favFromUser));
+      localStorage.setItem("favorites", JSON.stringify(favFromUser));
+      console.log(localStorage.getItem("favorites"));
     }
   }
 
@@ -42,7 +43,7 @@ function App() {
         ></Route>
         <Route
           path="/favorites"
-          element={<Favorites array={localStorage.getItem("session")} />}
+          element={<Favorites array={localStorage.getItem("favorites")} />}
         ></Route>
       </Routes>
       <Footer />

@@ -72,9 +72,6 @@ const Comics = ({ SaveDataToLocalStorage }) => {
                 <div className="img-fit">
                   <div className="description">{elem.description}</div>
                   <img
-                    onClick={() => {
-                      SaveDataToLocalStorage(elem._id);
-                    }}
                     className="comics-img"
                     src={`${elem.thumbnail.path}.${elem.thumbnail.extension}`}
                     alt="comics"

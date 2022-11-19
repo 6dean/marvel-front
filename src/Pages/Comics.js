@@ -80,7 +80,7 @@ const Comics = () => {
             </button>
           ) : (
             <button className="paging-0">
-              <p className="paging-text-0">PREVIOUS</p>
+              <p className="paging-text-0">NONE</p>
             </button>
           )}
         </div>

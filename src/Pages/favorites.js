@@ -5,12 +5,7 @@ const Favorite = ({ array }) => {
   const [fav, setFav] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // console.log("valeur => ", array);
   let favo = [];
-
-  // JSON.parse(array).forEach(async (item, index) => {
-  //   console.log(item, index);
-  // });
 
   const fetchData = () => {
     JSON.parse(array).forEach(async (item, index) => {
@@ -20,7 +15,15 @@ const Favorite = ({ array }) => {
         );
         favo.push(response.data);
         setFav(favo);
-        !index && setIsLoading(false);
+
+        console.log(index, "=", JSON.parse(array).length - 1);
+
+        if (index === JSON.parse(array).length - 1) {
+          setIsLoading(false);
+        } else {
+          setIsLoading(true);
+        }
+
         return;
       } catch (error) {
         console.log(error);
@@ -31,22 +34,20 @@ const Favorite = ({ array }) => {
     fetchData();
   }, []);
 
-  console.log("Tableau de favoris =>", fav);
-
   return isLoading ? (
     <body>
       <div className="bodY">
-        <div class="loading-effect">
-          <div class="wave"></div>
-          <div class="wave"></div>
-          <div class="wave"></div>
-          <div class="wave"></div>
-          <div class="wave"></div>
-          <div class="wave"></div>
-          <div class="wave"></div>
-          <div class="wave"></div>
-          <div class="wave"></div>
-          <div class="wave"></div>
+        <div className="loading-effect">
+          <div className="wave"></div>
+          <div className="wave"></div>
+          <div className="wave"></div>
+          <div className="wave"></div>
+          <div className="wave"></div>
+          <div className="wave"></div>
+          <div className="wave"></div>
+          <div className="wave"></div>
+          <div className="wave"></div>
+          <div className="wave"></div>
         </div>
       </div>
     </body>

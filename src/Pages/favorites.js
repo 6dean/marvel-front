@@ -8,23 +8,27 @@ const Favorite = ({ FavCharacters }) => {
   let arrayFavorites = [];
 
   const fetchData = () => {
-    JSON.parse(FavCharacters).forEach(async (id, index) => {
-      try {
-        const response = await axios.get(`http://localhost:3000/comics/${id}`);
-        arrayFavorites.push(response.data);
-        setFavorites(arrayFavorites);
+    JSON.parse(FavCharacters) !== null
+      ? JSON.parse(FavCharacters).forEach(async function (id) {
+          try {
+            const response = await axios.get(
+              `http://localhost:3000/comics/${id}`
+            );
+            arrayFavorites.push(response.data);
+            setFavorites(arrayFavorites);
 
-        if (arrayFavorites.length === JSON.parse(FavCharacters).length) {
-          setIsLoading(false);
-        } else {
-          setIsLoading(true);
-        }
+            if (arrayFavorites.length === JSON.parse(FavCharacters).length) {
+              setIsLoading(false);
+            } else {
+              setIsLoading(true);
+            }
 
-        return;
-      } catch (error) {
-        console.log(error);
-      }
-    });
+            return;
+          } catch (error) {
+            console.log(error);
+          }
+        })
+      : setIsLoading(false);
   };
   useEffect(() => {
     fetchData();
@@ -48,7 +52,7 @@ const Favorite = ({ FavCharacters }) => {
       </div>
     </body>
   ) : (
-    <body>
+    <body className="bodyyy">
       {favorites.map((elem, key) => {
         return (
           <div key={key} className="fav-card">

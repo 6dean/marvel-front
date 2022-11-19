@@ -98,12 +98,17 @@ const Comics = () => {
               <div className="card" key={index}>
                 <div className="img-fit">
                   <div className="description">{elem.description}</div>
-                  <img
-                    className="comics-img"
-                    src={`${elem.thumbnail.path}.${elem.thumbnail.extension}`}
-                    alt="comics"
-                    width="200px"
-                  />
+                  <div class="image">
+                    <img
+                      className="comics-img"
+                      src={`${elem.thumbnail.path}.${elem.thumbnail.extension}`}
+                      alt="comics"
+                      width="200px"
+                    />
+                    <div class="image__overlay image__overlay--primary">
+                      <p class="image__description">{elem.description}</p>
+                    </div>
+                  </div>
                 </div>
                 <div className="title-card">
                   <div>
@@ -115,7 +120,7 @@ const Comics = () => {
           }
         })}
       </div>
-      <div className="pagination">
+      <div className="pagination-bottom">
         <div>
           {skip === 0 ? (
             <button className="paging-0">

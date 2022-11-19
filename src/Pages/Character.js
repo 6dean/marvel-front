@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Cookies from "js-cookie";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 
@@ -16,18 +16,16 @@ const Character = ({ SaveDataToLocalStorage }) => {
       id: id,
     });
     setData(response.data);
-    console.log(data.description);
     setIsLoading(false);
   };
 
   useEffect(() => {
     fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   return isLoading ? (
-    <body>
-      <div className="bodY">
+    <div>
+      <div className="Y">
         <div class="loading-effect">
           <div class="wave"></div>
           <div class="wave"></div>
@@ -41,11 +39,14 @@ const Character = ({ SaveDataToLocalStorage }) => {
           <div class="wave"></div>
         </div>
       </div>
-    </body>
+    </div>
   ) : (
-    <body>
+    <div className="YY">
       <div className="master-character-page">
         <div className="fav-button">
+          <Link to="/characters">
+            <button className="button-back">RETOUR</button>
+          </Link>
           <button
             className="button"
             onClick={() => {
@@ -113,7 +114,7 @@ const Character = ({ SaveDataToLocalStorage }) => {
           </div>
         </div>
       </div>
-    </body>
+    </div>
   );
 };
 

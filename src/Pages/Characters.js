@@ -7,7 +7,6 @@ const Characters = () => {
   const [data, setData] = useState({});
   const [name, setName] = useState("");
   const [skip, setSkip] = useState(0);
-  const [next, setNext] = useState(false);
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -17,7 +16,6 @@ const Characters = () => {
     );
     setData(response.data);
     setIsLoading(false);
-    console.log(data.limit);
   };
 
   useEffect(() => {
@@ -101,7 +99,11 @@ const Characters = () => {
           } else {
             return (
               <div className="card-character" key={index}>
-                <Link to="/character" state={{ id: elem._id }}>
+                <Link
+                  to="/character"
+                  onClick={() => window.scrollTo(0, 0)}
+                  state={{ id: elem._id }}
+                >
                   <div className="img-fit-C">
                     <img
                       className="character-img"
@@ -128,7 +130,7 @@ const Characters = () => {
         })}
       </div>
 
-      <div className="pagination">
+      <div className="pagination-bottom">
         <div>
           {skip === 0 ? (
             <button className="paging-0">

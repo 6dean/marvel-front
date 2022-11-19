@@ -1,22 +1,20 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const Favorite = ({ array }) => {
-  const [fav, setFav] = useState([]);
+const Favorite = ({ FavCharacters }) => {
+  const [favorites, setFavorites] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  let favo = [];
+  let arrayFavorites = [];
 
   const fetchData = () => {
-    JSON.parse(array).forEach(async (item, index) => {
+    JSON.parse(FavCharacters).forEach(async (id, index) => {
       try {
-        const response = await axios.get(
-          `http://localhost:3000/comics/${item}`
-        );
-        favo.push(response.data);
-        setFav(favo);
+        const response = await axios.get(`http://localhost:3000/comics/${id}`);
+        arrayFavorites.push(response.data);
+        setFavorites(arrayFavorites);
 
-        if (index === JSON.parse(array).length - 1) {
+        if (arrayFavorites.length === JSON.parse(FavCharacters).length) {
           setIsLoading(false);
         } else {
           setIsLoading(true);
@@ -51,7 +49,7 @@ const Favorite = ({ array }) => {
     </body>
   ) : (
     <body>
-      {fav.map((elem, key) => {
+      {favorites.map((elem, key) => {
         return (
           <div key={key} className="fav-card">
             <div>

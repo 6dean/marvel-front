@@ -7,6 +7,7 @@ const Characters = () => {
   const [data, setData] = useState({});
   const [name, setName] = useState("");
   const [skip, setSkip] = useState(0);
+  const [next, setNext] = useState(false);
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -16,6 +17,7 @@ const Characters = () => {
     );
     setData(response.data);
     setIsLoading(false);
+    console.log(data.limit);
   };
 
   useEffect(() => {
@@ -41,35 +43,54 @@ const Characters = () => {
     </body>
   ) : (
     <body>
-      <div className="search-bar">
-        <input
-          onChange={(elem) => {
-            setName(elem.target.value);
-          }}
-        ></input>
+      <div className="pagination">
+        <div>
+          {skip === 0 ? (
+            <button className="paging-0">
+              <p className="paging-text-0">NONE</p>
+            </button>
+          ) : (
+            <button
+              className="paging"
+              onClick={() => {
+                setSkip(skip - 100);
+                window.onbeforeunload = function () {
+                  window.scrollTo(0, 0);
+                };
+              }}
+            >
+              PREVIOUS
+            </button>
+          )}
+        </div>
+        <div className="search-bar">
+          <input
+            onChange={(elem) => {
+              setName(elem.target.value);
+            }}
+            type="text"
+            placeholder="SEARCH"
+          ></input>
+        </div>
+        <div>
+          {data.count > 100 ? (
+            <button
+              className="paging"
+              onClick={() => {
+                setSkip(skip + 100);
+                window.scroll(0, 0);
+              }}
+            >
+              NEXT
+            </button>
+          ) : (
+            <button className="paging-0">
+              <p className="paging-text-0">NONE</p>
+            </button>
+          )}
+        </div>
       </div>
 
-      <div className="page-select">
-        {skip === 0 ? null : (
-          <button
-            onClick={() => {
-              setSkip(skip - 100);
-              window.onbeforeunload = function () {
-                window.scrollTo(0, 0);
-              };
-            }}
-          >
-            PAGE PRECEDENTE
-          </button>
-        )}
-        <button
-          onClick={() => {
-            setSkip(skip + 100);
-          }}
-        >
-          PAGE SUIVANTE
-        </button>
-      </div>
       <div className="listing-characters">
         {data.results.map((elem, index) => {
           if (
@@ -107,11 +128,15 @@ const Characters = () => {
         })}
       </div>
 
-      <div>
-        {skip === 0 ? null : (
-          // eslint-disable-next-line jsx-a11y/anchor-is-valid
-          <a href="#">
+      <div className="pagination">
+        <div>
+          {skip === 0 ? (
+            <button className="paging-0">
+              <p className="paging-text-0">NONE</p>
+            </button>
+          ) : (
             <button
+              className="paging"
               onClick={() => {
                 setSkip(skip - 100);
                 window.onbeforeunload = function () {
@@ -119,19 +144,27 @@ const Characters = () => {
                 };
               }}
             >
-              PAGE PRECEDENTE
+              PREVIOUS
             </button>
-          </a>
-        )}
-        <a href="#">
-          <button
-            onClick={() => {
-              setSkip(skip + 100);
-            }}
-          >
-            PAGE SUIVANTE
-          </button>
-        </a>
+          )}
+        </div>
+        <div>
+          {data.count > 100 ? (
+            <button
+              className="paging"
+              onClick={() => {
+                setSkip(skip + 100);
+                window.scroll(0, 0);
+              }}
+            >
+              NEXT
+            </button>
+          ) : (
+            <button className="paging-0">
+              <p className="paging-text-0">NONE</p>
+            </button>
+          )}
+        </div>
       </div>
     </body>
   );

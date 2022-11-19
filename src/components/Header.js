@@ -17,18 +17,18 @@ const Header = () => {
       <div className="top-buttons">
         <div>
           <Link to="/Comics">
-            <button>COMICS</button>
+            <button className="nav-btn">COMICS</button>
           </Link>
         </div>
         <div>
           <Link to="/Characters">
-            <button>CHARACTERS</button>
+            <button className="nav-btn">CHARACTERS</button>
           </Link>
         </div>
         <div>
           {" "}
           <Link to="/Favorites">
-            <button>FAVORITES</button>
+            <button className="nav-btn">FAVORITES</button>
           </Link>
         </div>
       </div>

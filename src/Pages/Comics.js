@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const Comics = ({ SaveDataToLocalStorage }) => {
+const Comics = () => {
   const [data, setData] = useState({});
   const [title, setTitle] = useState("");
   const [skip, setSkip] = useState(0);
@@ -38,17 +38,15 @@ const Comics = ({ SaveDataToLocalStorage }) => {
     </body>
   ) : (
     <body>
-      <div className="search-bar">
-        <input
-          onChange={(elem) => {
-            setTitle(elem.target.value);
-          }}
-        ></input>
-      </div>
       <div className="pagination">
         <div>
-          {skip === 0 ? null : (
+          {skip === 0 ? (
+            <button className="paging-0">
+              <p className="paging-text-0">NONE</p>
+            </button>
+          ) : (
             <button
+              className="paging"
               onClick={() => {
                 setSkip(skip - 100);
                 window.onbeforeunload = function () {
@@ -56,17 +54,35 @@ const Comics = ({ SaveDataToLocalStorage }) => {
                 };
               }}
             >
-              PAGE PRECEDENTE
+              PREVIOUS
             </button>
           )}
-          <button
-            onClick={() => {
-              setSkip(skip + 100);
-              window.scroll(0, 0);
+        </div>
+        <div className="search-bar">
+          <input
+            onChange={(elem) => {
+              setTitle(elem.target.value);
             }}
-          >
-            PAGE SUIVANTE
-          </button>
+            type="text"
+            placeholder="SEARCH"
+          ></input>
+        </div>
+        <div>
+          {data.count > 100 ? (
+            <button
+              className="paging"
+              onClick={() => {
+                setSkip(skip + 100);
+                window.scroll(0, 0);
+              }}
+            >
+              NEXT
+            </button>
+          ) : (
+            <button className="paging-0">
+              <p className="paging-text-0">PREVIOUS</p>
+            </button>
+          )}
         </div>
       </div>
 
@@ -99,25 +115,43 @@ const Comics = ({ SaveDataToLocalStorage }) => {
           }
         })}
       </div>
-      <div>
-        {skip === 0 ? null : (
-          <button
-            onClick={() => {
-              setSkip(skip - 100);
-              window.scrollTo(0, 0);
-            }}
-          >
-            PAGE PRECEDENTE
-          </button>
-        )}
-        <button
-          onClick={() => {
-            setSkip(skip + 100);
-            window.scrollTo(0, 0);
-          }}
-        >
-          PAGE SUIVANTE
-        </button>
+      <div className="pagination">
+        <div>
+          {skip === 0 ? (
+            <button className="paging-0">
+              <p className="paging-text-0">NONE</p>
+            </button>
+          ) : (
+            <button
+              className="paging"
+              onClick={() => {
+                setSkip(skip - 100);
+                window.onbeforeunload = function () {
+                  window.scrollTo(0, 0);
+                };
+              }}
+            >
+              PREVIOUS
+            </button>
+          )}{" "}
+        </div>
+        <div>
+          {data.count > 100 ? (
+            <button
+              className="paging"
+              onClick={() => {
+                setSkip(skip + 100);
+                window.scroll(0, 0);
+              }}
+            >
+              NEXT
+            </button>
+          ) : (
+            <button className="paging-0">
+              <p className="paging-text-0">NONE</p>
+            </button>
+          )}
+        </div>
       </div>
     </body>
   );

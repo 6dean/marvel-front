@@ -16,6 +16,7 @@ const Character = ({ SaveDataToLocalStorage }) => {
       id: id,
     });
     setData(response.data);
+    console.log(data.description);
     setIsLoading(false);
   };
 
@@ -51,7 +52,7 @@ const Character = ({ SaveDataToLocalStorage }) => {
               SaveDataToLocalStorage(data._id);
             }}
           >
-            FAV
+            ☆ ADD TO FAVORITES
           </button>
         </div>
         <div className="character-style-info">
@@ -72,8 +73,10 @@ const Character = ({ SaveDataToLocalStorage }) => {
               <div>Description</div>
             </div>
             <div className="box-2">
-              <div className="text-style">{data.name}</div>
-              <div>{data.description === "" && "Unknow"}</div>
+              <div className="text-style-2">{data.name}</div>
+              <div className="text-style-3">
+                {data.description !== "" ? data.description : "unknow"}
+              </div>
             </div>
           </div>
         </div>

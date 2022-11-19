@@ -16,8 +16,6 @@ const Favorite = ({ array }) => {
         favo.push(response.data);
         setFav(favo);
 
-        console.log(index, "=", JSON.parse(array).length - 1);
-
         if (index === JSON.parse(array).length - 1) {
           setIsLoading(false);
         } else {

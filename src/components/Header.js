@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  function refreshPage() {
+    window.location.reload();
+  }
   return (
     <header>
       <div className="top-header">
@@ -28,7 +31,14 @@ const Header = () => {
         <div>
           {" "}
           <Link to="/Favorites">
-            <button className="nav-btn">FAVORITES</button>
+            <button
+              onClick={() => {
+                refreshPage();
+              }}
+              className="nav-btn"
+            >
+              FAVORITES
+            </button>
           </Link>
         </div>
       </div>

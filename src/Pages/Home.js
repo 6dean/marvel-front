@@ -52,9 +52,9 @@ const Home = () => {
         <div className="banner-home">
           <div className="header-banner">
             <div>
-              <p className="banner-text-spider">SPIDERMAN COMICS</p>
+              <p className="banner-text-spider">SPIDER-MAN</p>
             </div>
-            <div className="banner-text">Top Search</div>
+            <div className="banner-text">Top Selection</div>
           </div>
           <img
             className="banner"
@@ -102,9 +102,9 @@ const Home = () => {
           />
           <div className="header-banner">
             <div>
-              <p className="banner-text-venom">VENOM COMICS</p>
+              <p className="banner-text-venom">VENOM</p>
             </div>
-            <div className="banner-text-v">Last Sales</div>
+            <div className="banner-text-v">Best Of</div>
           </div>
         </div>
       </div>
@@ -139,9 +139,9 @@ const Home = () => {
         <div className="banner-home">
           <div className="header-banner">
             <div>
-              <p className="banner-text-hulk">HULK COMICS</p>
+              <p className="banner-text-hulk">INCREDIBLE HULK</p>
             </div>
-            <div className="banner-text">Lastest Releases</div>
+            <div className="banner-text">New Releases</div>
           </div>
           <img
             className="banner"

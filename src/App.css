@@ -612,9 +612,8 @@ footer {
 
 .banner-text-hulk {
   font-family: "League Gothic", sans-serif;
-  font-size: 50px;
   border-bottom: 1px solid black;
-
+  font-size: 50px;
   color: rgb(2, 239, 2);
 }
 

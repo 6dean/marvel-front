@@ -30,6 +30,7 @@ const Favorite = ({ FavCharacters }) => {
           }
         })
       : setIsLoading(false);
+    // eslint-disable-next-line
   };
   useEffect(() => {
     fetchData();

@@ -12,7 +12,7 @@ const Favorite = ({ FavCharacters }) => {
       ? JSON.parse(FavCharacters).forEach(async function (id) {
           try {
             const response = await axios.get(
-              `http://localhost:3000/comics/${id}`
+              `https://site--backend-marvel--6qn7tv96v7tt.code.run/comics/${id}`
             );
             arrayFavorites.push(response.data);
             setFavorites(arrayFavorites);

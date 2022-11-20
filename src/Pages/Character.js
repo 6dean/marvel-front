@@ -12,9 +12,12 @@ const Character = ({ SaveDataToLocalStorage }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchData = async () => {
-    const response = await axios.get(`http://localhost:3000/comics/${id}`, {
-      id: id,
-    });
+    const response = await axios.get(
+      `https://site--backend-marvel--6qn7tv96v7tt.code.run/comics/${id}`,
+      {
+        id: id,
+      }
+    );
     setData(response.data);
     console.log(data.description);
     setIsLoading(false);

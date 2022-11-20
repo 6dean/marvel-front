@@ -9,7 +9,7 @@ const Comics = () => {
 
   const fetchData = async () => {
     const response = await axios.get(
-      `http://localhost:3000/comics?title=${title}&skip=${skip}`
+      `https://site--backend-marvel--6qn7tv96v7tt.code.run/comics?title=${title}&skip=${skip}`
     );
     setData(response.data);
     setIsLoading(false);

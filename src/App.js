@@ -13,22 +13,20 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 function App() {
-  //
-  // FONCTION POUR ENREGISTRER LES PERSO EN LOCALSTORAGE
-
   function SaveDataToLocalStorage(data) {
+    // FONCTION POUR ENREGISTRER LES PERSO EN LOCALSTORAGE
+
     let favFromUser = [];
     favFromUser = JSON.parse(localStorage.getItem("favorites")) || [];
-    // SI IL EXISTE DEJA, TU RETURN NULL
 
     if (favFromUser.some((id) => (id === data) === true)) {
-      return null;
+      return alert`This Character is already in your favorites !`;
+      // SI IL EXISTE DEJA, TU RETURN ALERT
     } else {
-      // SINON TU LE PUSH DANS LE TABLEAU
-
       favFromUser.push(data);
       localStorage.setItem("favorites", JSON.stringify(favFromUser));
-      console.log(localStorage.getItem("favorites"));
+      alert`Character added to fav !`;
+      // SINON TU LE PUSH DANS LE TABLEAU
     }
   }
 

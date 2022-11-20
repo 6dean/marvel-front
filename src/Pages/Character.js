@@ -56,7 +56,6 @@ const Character = ({ SaveDataToLocalStorage }) => {
             className="button"
             onClick={() => {
               SaveDataToLocalStorage(data._id);
-              alert`Character added to fav !`;
             }}
           >
             ☆ ADD TO FAVORITES

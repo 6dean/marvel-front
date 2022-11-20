@@ -14,7 +14,6 @@ const Home = () => {
     const sndResponse = await axios.get(
       `https://site--backend-marvel--6qn7tv96v7tt.code.run/comics?title=venom`
     );
-
     const trsResponse = await axios.get(
       `https://site--backend-marvel--6qn7tv96v7tt.code.run/comics?title=hulk`
     );

@@ -48,19 +48,21 @@ const Home = () => {
     </body>
   ) : (
     <body className="home-page">
-      <div className="banner-home">
-        <div className="header-banner">
-          <div>
-            <p className="banner-text-spider">SPIDERMAN COMICS</p>
+      <div className="sector">
+        <div className="banner-home">
+          <div className="header-banner">
+            <div>
+              <p className="banner-text-spider">SPIDERMAN COMICS</p>
+            </div>
+            <div className="banner-text">Top Search</div>
           </div>
-          <div className="banner-text">Top Search</div>
+          <img
+            className="banner"
+            src="https://res.cloudinary.com/dlfp2xvis/image/upload/v1668946184/my-content/003_vnsudu.jpg"
+            alt="spiderman"
+            width="500px"
+          />
         </div>
-        <img
-          className="banner"
-          src="https://res.cloudinary.com/dlfp2xvis/image/upload/v1668946184/my-content/003_vnsudu.jpg"
-          alt="spiderman"
-          width="500px"
-        />
       </div>
       <div className="master-scrolling-home">
         <div className="scrolling-comics-home">
@@ -90,18 +92,20 @@ const Home = () => {
           })}
         </div>
       </div>
-      <div className="banner-home">
-        <img
-          className="banner"
-          src="https://res.cloudinary.com/dlfp2xvis/image/upload/v1668946184/my-content/002_gryqcq.jpg"
-          alt="Venom"
-          width="500px"
-        />
-        <div className="header-banner">
-          <div>
-            <p className="banner-text-venom">VENOM COMICS</p>
+      <div className="sector-v">
+        <div className="banner-home">
+          <img
+            className="banner"
+            src="https://res.cloudinary.com/dlfp2xvis/image/upload/v1668946184/my-content/002_gryqcq.jpg"
+            alt="Venom"
+            width="500px"
+          />
+          <div className="header-banner">
+            <div>
+              <p className="banner-text-venom">VENOM COMICS</p>
+            </div>
+            <div className="banner-text-v">Last Sales</div>
           </div>
-          <div className="banner-text-v">Last Sales</div>
         </div>
       </div>
       <div className="master-scrolling-home">
@@ -131,19 +135,21 @@ const Home = () => {
           })}
         </div>
       </div>
-      <div className="banner-home">
-        <div className="header-banner">
-          <div>
-            <p className="banner-text-hulk">HULK COMICS</p>
+      <div className="sector-h">
+        <div className="banner-home">
+          <div className="header-banner">
+            <div>
+              <p className="banner-text-hulk">HULK COMICS</p>
+            </div>
+            <div className="banner-text">Lastest Releases</div>
           </div>
-          <div className="banner-text">Lastest Releases</div>
+          <img
+            className="banner"
+            src="https://res.cloudinary.com/dlfp2xvis/image/upload/v1668946184/my-content/001-1_muujtt.jpg"
+            alt="HULK"
+            width="500px"
+          />
         </div>
-        <img
-          className="banner"
-          src="https://res.cloudinary.com/dlfp2xvis/image/upload/v1668946184/my-content/001-1_muujtt.jpg"
-          alt="HULK"
-          width="500px"
-        />
       </div>
       <div className="master-scrolling-home">
         <div className="scrolling-comics-home">

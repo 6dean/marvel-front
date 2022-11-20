@@ -547,6 +547,15 @@ footer {
   font-size: 15px;
 }
 
+.detail {
+  font-family: "Barlow", sans-serif;
+  color: rgba(255, 255, 255, 0.505);
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-left: 17px;
+}
+
 .details:hover {
   text-decoration: underline;
   color: rgba(255, 255, 255, 0.694);

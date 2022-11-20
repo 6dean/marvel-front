@@ -16,16 +16,18 @@ const Character = ({ SaveDataToLocalStorage }) => {
       id: id,
     });
     setData(response.data);
+    console.log(data.description);
     setIsLoading(false);
   };
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   return isLoading ? (
-    <div>
-      <div className="Y">
+    <body>
+      <div className="bodY">
         <div class="loading-effect">
           <div class="wave"></div>
           <div class="wave"></div>
@@ -39,9 +41,9 @@ const Character = ({ SaveDataToLocalStorage }) => {
           <div class="wave"></div>
         </div>
       </div>
-    </div>
+    </body>
   ) : (
-    <div className="YY">
+    <body className="bodyy">
       <div className="master-character-page">
         <div className="fav-button">
           <Link to="/characters">
@@ -114,7 +116,7 @@ const Character = ({ SaveDataToLocalStorage }) => {
           </div>
         </div>
       </div>
-    </div>
+    </body>
   );
 };
 

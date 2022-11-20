@@ -16,10 +16,9 @@ const Footer = () => {
               width="50px"
             />
           </div>
-          <div className="details">Marvel 2022</div>
         </div>
         <div>
-          <div className="details">
+          <div className="detail">
             <img
               src="https://res.cloudinary.com/dlfp2xvis/image/upload/v1668887083/my-content/02_azuwye.png"
               alt="icon"

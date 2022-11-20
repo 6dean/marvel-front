@@ -2,11 +2,11 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // MES PAGES
-import Home from "./Pages/Home";
-import Comics from "./Pages/Comics";
-import Characters from "./Pages/Characters";
-import Character from "./Pages/Character";
-import Favorites from "./Pages/Favorites";
+import Home from "./Pages/home";
+import Comics from "./Pages/comics";
+import Characters from "./Pages/characters";
+import Character from "./Pages/character";
+import Favorites from "./Pages/favorites";
 
 // MES COMPONENTS
 import Header from "./components/Header";

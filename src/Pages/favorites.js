@@ -8,31 +8,32 @@ const Favorite = ({ FavCharacters }) => {
 
   let arrayFavorites = [];
 
-  const fetchData = () => {
-    JSON.parse(FavCharacters) !== null
-      ? JSON.parse(FavCharacters).forEach(async function (id) {
-          try {
-            const response = await axios.get(
-              `https://site--backend-marvel--6qn7tv96v7tt.code.run/comics/${id}`
-            );
-            arrayFavorites.push(response.data);
-            setFavorites(arrayFavorites);
-
-            if (arrayFavorites.length === JSON.parse(FavCharacters).length) {
-              setIsLoading(false);
-            } else {
-              setIsLoading(true);
-            }
-
-            return;
-          } catch (error) {
-            console.log(error);
-          }
-        })
-      : setIsLoading(false);
-    // eslint-disable-next-line
-  };
   useEffect(() => {
+    const fetchData = () => {
+      JSON.parse(FavCharacters) !== null
+        ? JSON.parse(FavCharacters).forEach(async function (id) {
+            try {
+              const response = await axios.get(
+                `https://site--backend-marvel--6qn7tv96v7tt.code.run/comics/${id}`
+              );
+
+              arrayFavorites.push(response.data);
+              setFavorites(arrayFavorites);
+
+              if (arrayFavorites.length === JSON.parse(FavCharacters).length) {
+                setIsLoading(false);
+              } else {
+                setIsLoading(true);
+              }
+
+              return;
+            } catch (error) {
+              console.log(error);
+            }
+          })
+        : setIsLoading(false);
+    };
+
     fetchData();
   }, []);
 

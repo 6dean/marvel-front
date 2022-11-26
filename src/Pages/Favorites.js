@@ -1,5 +1,5 @@
 const Favorite = ({ FavCharacters }) => {
-  return JSON.parse(FavCharacters) ? (
+  return JSON.parse(FavCharacters) !== undefined ? (
     <body className="bodyyy">
       {JSON.parse(FavCharacters).map((elem, key) => {
         return (

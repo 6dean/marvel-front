@@ -1,6 +1,6 @@
 const Favorite = ({ FavCharacters }) => {
-  if (JSON.parse(FavCharacters) === undefined) {
-    return JSON.parse(FavCharacters) ? (
+  if (JSON.parse(FavCharacters) !== undefined) {
+    return (
       <body className="bodyyy">
         {JSON.parse(FavCharacters).map((elem, key) => {
           return (
@@ -49,8 +49,6 @@ const Favorite = ({ FavCharacters }) => {
           );
         })}
       </body>
-    ) : (
-      <body className="bodyyy"></body>
     );
   } else {
     return <body className="bodyyy"></body>;

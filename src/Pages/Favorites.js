@@ -1,5 +1,8 @@
 const Favorite = ({ FavCharacters }) => {
-  if (JSON.parse(FavCharacters) !== undefined) {
+  if (
+    JSON.parse(FavCharacters) !== undefined &&
+    JSON.parse(FavCharacters) !== null
+  ) {
     return (
       <body className="bodyyy">
         {JSON.parse(FavCharacters).map((elem, key) => {
@@ -30,7 +33,7 @@ const Favorite = ({ FavCharacters }) => {
                         return null;
                       } else {
                         return (
-                          <div className="header-character-fav">
+                          <div key={index} className="header-character-fav">
                             <div className="comics-fit-scroll-fav">
                               <img
                                 src={`${elem.thumbnail.path}.${elem.thumbnail.extension}`}
@@ -51,7 +54,7 @@ const Favorite = ({ FavCharacters }) => {
       </body>
     );
   } else {
-    return <body className="bodyyy"></body>;
+    return <body className="bodyyy"> Vous n'avez pas de favoris</body>;
   }
 };
 

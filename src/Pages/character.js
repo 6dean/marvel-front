@@ -55,7 +55,7 @@ const Character = ({ SaveDataToLocalStorage }) => {
           <button
             className="button"
             onClick={() => {
-              SaveDataToLocalStorage(data._id);
+              SaveDataToLocalStorage(data);
             }}
           >
             ☆ ADD TO FAVORITES

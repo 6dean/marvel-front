@@ -1,66 +1,10 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import axios from "axios";
-import { useEffect, useState } from "react";
-
 const Favorite = ({ FavCharacters }) => {
-  const [favorites, setFavorites] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  let arrayFavorites = [];
-
-  useEffect(() => {
-    const fetchData = () => {
-      JSON.parse(FavCharacters) !== null
-        ? JSON.parse(FavCharacters).forEach(async function (id) {
-            try {
-              const response = await axios.get(
-                `https://site--backend-marvel--6qn7tv96v7tt.code.run/comics/${id}`
-              );
-
-              arrayFavorites.push(response.data);
-              setFavorites(arrayFavorites);
-
-              if (arrayFavorites.length === JSON.parse(FavCharacters).length) {
-                setIsLoading(false);
-              } else {
-                setIsLoading(true);
-              }
-
-              return;
-            } catch (error) {
-              console.log(error);
-            }
-          })
-        : setIsLoading(false);
-    };
-
-    fetchData();
-  }, []);
-
-  return isLoading ? (
-    <body>
-      <div className="bodY">
-        <div className="loading-effect">
-          <div className="wave"></div>
-          <div className="wave"></div>
-          <div className="wave"></div>
-          <div className="wave"></div>
-          <div className="wave"></div>
-          <div className="wave"></div>
-          <div className="wave"></div>
-          <div className="wave"></div>
-          <div className="wave"></div>
-          <div className="wave"></div>
-        </div>
-      </div>
-    </body>
-  ) : (
+  return JSON.parse(FavCharacters) ? (
     <body className="bodyyy">
-      {favorites.map((elem, key) => {
+      {JSON.parse(FavCharacters).map((elem, key) => {
         return (
           <div key={key} className="fav-card">
             <div>
-              {" "}
               <div className="portrait-fav">
                 <img
                   src={`${elem.thumbnail.path}.${elem.thumbnail.extension}`}
@@ -104,6 +48,8 @@ const Favorite = ({ FavCharacters }) => {
         );
       })}
     </body>
+  ) : (
+    <body className="bodyyy"></body>
   );
 };
 

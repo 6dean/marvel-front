@@ -9,13 +9,13 @@ const Home = () => {
 
   const fetchData = async () => {
     const response = await axios.get(
-      `https://site--backend-marvel--6qn7tv96v7tt.code.run/comics?title=spider-man`
+      `https://marvel-back-ttuo.onrender.com/comics?title=spider-man`
     );
     const sndResponse = await axios.get(
-      `https://site--backend-marvel--6qn7tv96v7tt.code.run/comics?title=venom`
+      `https://marvel-back-ttuo.onrender.com/comics?title=venom`
     );
     const trsResponse = await axios.get(
-      `https://site--backend-marvel--6qn7tv96v7tt.code.run/comics?title=hulk`
+      `https://marvel-back-ttuo.onrender.com/comics?title=hulk`
     );
     setData(response.data);
     setData2(sndResponse.data);
